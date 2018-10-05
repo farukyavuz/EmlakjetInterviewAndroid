@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemNoticeRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@android:color/darker_gray"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        android:src="@drawable/icon_image_place_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/icon_image_place_holder" />
+
+    <TextView
+        android:id="@+id/itemNoticeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Mimar Sinan Caddesi K. Mustafa Pasa'da Satılık  2+1 Ara Kat Daire"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/itemNoticePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/itemNoticeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticeTitle"
+        tools:text="500.000 TL" />
+
+    <TextView
+        android:id="@+id/itemNoticeFloor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="120 m2 . 4. Kat . 2+1"
+        app:layout_constraintEnd_toEndOf="@+id/itemNoticeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticeTitle" />
+
+    <TextView
+        android:id="@+id/itemNoticeShortAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/itemNoticePrice"
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticePrice"
+        tools:text="Bornova / Kazımdirik Mahallesi" />
+
+    <TextView
+        android:id="@+id/itemNoticeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/itemNoticeFloor"
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticeFloor"
+        tools:text="04 Ekim" />
+
+
+</android.support.constraint.ConstraintLayout>
