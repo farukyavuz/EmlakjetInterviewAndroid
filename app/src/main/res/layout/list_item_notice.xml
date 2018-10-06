@@ -4,25 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemNoticeRootView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
+    <com.emlakjet.interview.util.ClickableViewPager
+        android:id="@+id/itemNoticeViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="@android:color/darker_gray"
-        android:contentDescription="@null"
-        android:scaleType="center"
-        android:src="@drawable/icon_image_place_holder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/icon_image_place_holder" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/itemNoticeTitle"
@@ -34,47 +30,107 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
         android:maxLines="2"
-        android:text="Mimar Sinan Caddesi K. Mustafa Pasa'da Satılık  2+1 Ara Kat Daire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticeViewPager"
+        tools:text="@string/tools_text_item_notice_title" />
 
     <TextView
         android:id="@+id/itemNoticePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_bold"
         app:layout_constraintStart_toStartOf="@+id/itemNoticeTitle"
         app:layout_constraintTop_toBottomOf="@+id/itemNoticeTitle"
-        tools:text="500.000 TL" />
+        tools:text="@string/tools_text_item_notice_price" />
 
     <TextView
         android:id="@+id/itemNoticeFloor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="120 m2 . 4. Kat . 2+1"
+        android:fontFamily="@font/roboto"
+        android:text="@string/tools_text_item_notice_floor"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/itemNoticeTitle"
-        app:layout_constraintTop_toBottomOf="@+id/itemNoticeTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/itemNoticeTitle"
+        tools:text="120 m2 . 4. Kat . 2+1" />
 
     <TextView
         android:id="@+id/itemNoticeShortAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/itemNoticePrice"
         app:layout_constraintTop_toBottomOf="@+id/itemNoticePrice"
-        tools:text="Bornova / Kazımdirik Mahallesi" />
+        tools:text="@string/tools_text_item_notice_address" />
 
     <TextView
         android:id="@+id/itemNoticeDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/tools_text_item_notice_date"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/itemNoticeFloor"
         app:layout_constraintTop_toBottomOf="@+id/itemNoticeFloor"
         tools:text="04 Ekim" />
+
+    <ImageButton
+        android:id="@+id/itemNoticeBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/itemNoticeViewPager"
+        app:layout_constraintStart_toStartOf="@+id/itemNoticeViewPager"
+        app:layout_constraintTop_toTopOf="@+id/itemNoticeViewPager"
+        app:srcCompat="@drawable/icon_left_arrow_image_swap" />
+
+    <ImageButton
+        android:id="@+id/itemNoticeNextArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/itemNoticeViewPager"
+        app:layout_constraintEnd_toEndOf="@+id/itemNoticeViewPager"
+        app:layout_constraintTop_toTopOf="@+id/itemNoticeViewPager"
+        app:srcCompat="@drawable/icon_right_arrow_image_swap" />
+
+    <ImageView
+        android:id="@+id/itemNoticeCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/itemNoticeViewPager"
+        app:layout_constraintEnd_toEndOf="@+id/itemNoticeViewPager"
+        app:srcCompat="@drawable/icon_call" />
+
+    <ImageView
+        android:id="@+id/itemNoticeFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="@+id/itemNoticeViewPager"
+        app:layout_constraintTop_toTopOf="@+id/itemNoticeViewPager"
+        app:srcCompat="@drawable/icon_fav_passive" />
 
 
 </android.support.constraint.ConstraintLayout>

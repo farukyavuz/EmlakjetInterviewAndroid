@@ -11,4 +11,4 @@ import kotlinx.android.parcel.Parcelize
  * All rights reserved.
  */
 @Parcelize
-data class MainHit(@SerializedName("hits") var notices: MutableList<Hit>) : BaseModel(), Parcelable
+data class MainHit(@SerializedName("hits") var notices: MutableList<Hit>?) : BaseModel(), Parcelable

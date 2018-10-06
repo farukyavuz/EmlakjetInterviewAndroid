@@ -1,6 +1,9 @@
 package com.emlakjet.interview
 
 import android.app.Application
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 
 
 /**
@@ -10,7 +13,32 @@ import android.app.Application
  */
 class EJApp : Application() {
 
+    init {
+        instance = this
+    }
+
     override fun onCreate() {
         super.onCreate()
+    }
+
+    companion object {
+
+        private var instance: EJApp? = null
+        fun getAppContext(): Context {
+            return instance!!.applicationContext
+        }
+
+        fun EGAppGetApplication(): Application {
+            return instance!!
+        }
+
+        fun isNetworkAvailable(): Boolean {
+            val connectivityManager = getAppContext().getSystemService(Context.CONNECTIVITY_SERVICE)
+            return if (connectivityManager is ConnectivityManager) {
+                val networkInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
+                networkInfo?.isConnected ?: false
+            } else false
+        }
+
     }
 }

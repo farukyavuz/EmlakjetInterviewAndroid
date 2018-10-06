@@ -11,4 +11,4 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class MainPhone(var source: String,
-                     var phones: MutableList<Phone>) : BaseModel(), Parcelable
+                     var phones: MutableList<Phone>?) : BaseModel(), Parcelable

@@ -17,7 +17,7 @@ data class User(var id: Int,
                 @SerializedName("office_id") var officeID: Int,
                 var type: String,
                 var category: Int,
-                var phone: MutableList<MainPhone>,
+                var phone: MutableList<MainPhone>?,
                 @SerializedName("full_name") var fullName: String,
                 @SerializedName("account_name") var accountName: String,
                 var logo: String) : BaseModel(), Parcelable

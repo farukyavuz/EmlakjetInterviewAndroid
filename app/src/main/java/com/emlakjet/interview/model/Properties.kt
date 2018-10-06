@@ -12,4 +12,5 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class Properties(@SerializedName("CITY") var city: City,
-                 @SerializedName("TOWN") var town: Town) : BaseModel(), Parcelable
+                      @SerializedName("TOWN") var town: Town,
+                      @SerializedName("DISTRICT") var district: District) : BaseModel(), Parcelable

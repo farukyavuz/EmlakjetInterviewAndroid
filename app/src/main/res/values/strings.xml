@@ -1,3 +1,13 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Emlakjet Interview</string>
+    <string name="title_activity_map" tools:ignore="ExtraTranslation">Map</string>
+    <string name="try_again">Tekrar Dene</string>
+    <string name="tools_text_item_notice_title">Mimar Sinan Caddesi K. Mustafa Pasa\'da Satılık 2+1 Ara Kat Daire</string>
+    <string name="tools_text_item_notice_price">500.000 TL</string>
+    <string name="tools_text_item_notice_floor">120 m2 . 4. Kat . 2+1</string>
+    <string name="tools_text_item_notice_address">Bornova / Kazımdirik Mahallesi</string>
+    <string name="tools_text_item_notice_date">05 Ekim</string>
+    <string name="tools_text_item_nearby_title">Tüm Kategoriler</string>
+    <string name="map_street_view_title">Sokak Görünümü</string>
+    <string name="map_directions_title">Yol Tarifi</string>
 </resources>

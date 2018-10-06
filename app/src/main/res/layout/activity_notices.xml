@@ -6,10 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".activity.NoticesActivity">
 
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/noticesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="5"
+        tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/list_item_notice"
+        tools:orientation="vertical"
+        tools:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/noticesTryAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="#51C946"
+        android:padding="10dp"
+        android:paddingStart="25dp"
+        android:paddingLeft="25dp"
+        android:paddingEnd="25dp"
+        android:paddingRight="25dp"
+        android:text="@string/try_again"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.emlakjet.interview.util.OverlayProgressBar
+        android:id="@+id/noticesOverlayProgressBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
