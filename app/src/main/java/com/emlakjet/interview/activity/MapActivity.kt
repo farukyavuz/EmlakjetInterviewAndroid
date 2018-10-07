@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
+import android.view.MenuItem
 import android.widget.LinearLayout
 import android.widget.Toast
 import com.emlakjet.interview.R
@@ -31,6 +32,11 @@ class MapActivity : BaseActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
+
+        setSupportActionBar(mapToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.title = ""
 
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -85,5 +91,15 @@ class MapActivity : BaseActivity(), OnMapReadyCallback {
                 .icon(customMarker)
         mMap.addMarker(markerOptions)
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(noticeLocation, 11.0f))
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

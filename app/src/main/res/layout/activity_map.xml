@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toTopOf="@+id/nearbyRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mapToolbar"
         tools:context=".activity.MapActivity" />
 
     <android.support.v7.widget.RecyclerView
@@ -106,5 +106,18 @@
 
     </LinearLayout>
 
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mapToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp" />
 
 </android.support.constraint.ConstraintLayout>
