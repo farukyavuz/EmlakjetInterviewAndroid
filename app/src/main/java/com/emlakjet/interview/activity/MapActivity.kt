@@ -25,7 +25,7 @@ class MapActivity : BaseActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var hit: Hit
     private val nearbyItemClicked: (nearbyItemModel: NearbyItemModel) -> Unit = {
-        Toast.makeText(this, it.type, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "TODO Nearby Type : " + it.type, Toast.LENGTH_LONG).show()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,19 +52,17 @@ class MapActivity : BaseActivity(), OnMapReadyCallback {
         }
 
         mapDirectionsViewContainer.setOnClickListener {
-            Toast.makeText(this, "TODO Directions", Toast.LENGTH_LONG).show()
 
-            val gmmIntentUri = Uri.parse("geo:37.7749,-122.4194")
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            mapIntent.setPackage("com.google.android.apps.maps")
-            if (mapIntent.resolveActivity(packageManager) != null) {
-                startActivity(mapIntent)
-            }
+            val lat = hit.source.map.coordinate.lat
+            val long = hit.source.map.coordinate.lon
+            //val noticeLocation = LatLng(lat, long)
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+lat+","+long +"?z=17"))
+            startActivity(intent)
 
         }
 
         nearbyCall.setOnClickListener {
-            val phoneNumber = hit?.source?.user?.phone?.get(0)?.phones?.get(0)?.did
+            val phoneNumber = hit.source.user.phone?.get(0)?.phones?.get(0)?.did
             val intent = Intent(Intent.ACTION_DIAL);
             intent.data = Uri.parse("tel:$phoneNumber")
             startActivity(intent)
@@ -86,6 +84,6 @@ class MapActivity : BaseActivity(), OnMapReadyCallback {
                 //.title(hit.source.title.tr)
                 .icon(customMarker)
         mMap.addMarker(markerOptions)
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(noticeLocation, 13.0f))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(noticeLocation, 11.0f))
     }
 }

@@ -13,10 +13,10 @@
         android:contentDescription="@null"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/icon_image_place_holder"
+        android:src="@drawable/img_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/icon_image_place_holder" />
+        tools:src="@drawable/img_placeholder" />
 
 </LinearLayout>

@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.emlakjet.interview.R
 import com.emlakjet.interview.activity.MapActivity
 import com.emlakjet.interview.model.Hit
@@ -41,6 +42,7 @@ class NoticesAdapter(private val hits: List<Hit>?, private val context: Context?
 class NoticeViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
     private val rootView = view.itemNoticeRootView
     private val viewPager = view.itemNoticeViewPager
+    private val favorite = view.itemNoticeFavorite
     private val backArrow = view.itemNoticeBackArrow
     private val nextArrow = view.itemNoticeNextArrow
     private val callView = view.itemNoticeCall
@@ -64,6 +66,10 @@ class NoticeViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
 
         if (viewPager.currentItem == 0) {
             backArrow.visibility = View.GONE
+        }
+
+        favorite.setOnClickListener {
+            Toast.makeText(context, "TODO Favorite Button", Toast.LENGTH_LONG).show()
         }
 
         backArrow.setOnClickListener {

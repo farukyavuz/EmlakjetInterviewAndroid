@@ -21,8 +21,8 @@ class ImagesViewPagerAdapter(private val images: List<String>?, private val cont
         val view = LayoutInflater.from(context).inflate(R.layout.pager_item_images, parent, false)
         Picasso.get()
                 .load(images?.get(position))
-                .placeholder(R.drawable.icon_image_place_holder)
-                .error(R.drawable.icon_image_place_holder)
+                .placeholder(R.drawable.img_placeholder)
+                .error(R.drawable.img_placeholder)
                 .into(view.pagerItemImageView)
         parent.addView(view)
 
